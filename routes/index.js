@@ -9,14 +9,15 @@ module.exports = function (server) {
     server.post('/savepatient', (req, res, next) => {
         const post_data = req.body;
         patient.savePatient(post_data, (err, response) => {
-            if (err) return res.send(400, { DisplayMessage: err });
-            return res.send(200, { data: response });
+            if (err) return res.send(500, { ErrorMessage: err });
+            return res.send(200, { data: 'One row affected' });
+   
         });
     });
 
     server.get('/getpatients', (req, res, next) => {
         patient.getPatients((err, response) => {
-             if (err) return res.send(400, { DisplayMessage: err });
+            if (err) return res.send(500, { ErrorMessage: err});
             return res.send(200, response);
         });
     });
@@ -24,8 +25,9 @@ module.exports = function (server) {
     server.get('/deletepatient', (req, res, next) => {
         const patientId = req.query.pid;
         patient.deletepatient(patientId, (err, response) => {
-            if (err) return res.send(400, { DisplayMessage: err });
-            return res.send(200, response);
+            if (err) return res.send(500, { ErrorMessage: err});
+            return res.send(200, { data: 'One row affected' });
+    
         });
     });
 
