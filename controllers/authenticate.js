@@ -12,7 +12,6 @@ function authenticate(token, res, next) {
 function isAuthenticate(req, res, next) {
     const bearerHeader = req.headers["authorization"];
     // var bearerHeader=generateTocken();
-    // console.log("bearerHeader:"+bearerHeader);
     if (typeof bearerHeader !== 'undefined') {
         const bearer = bearerHeader.split(" ");
         const bearerToken = bearer[0];

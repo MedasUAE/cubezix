@@ -4,7 +4,7 @@
   "description": "rest webservice for patient",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node app.js"
   },
   "author": "Medas",
@@ -17,5 +17,11 @@
     "mysql": "^2.15.0",
     "restify": "^6.4.0",
     "restify-cors-middleware": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "request": "^2.87.0",
+    "should": "^13.2.1"
   }
 }

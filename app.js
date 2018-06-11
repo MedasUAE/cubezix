@@ -7,13 +7,13 @@ var mysql = require('mysql');
 var config = require('./config/config');
 
 // Database connection
-db = mysql.createConnection(config.db);
+db = mysql.createConnection(config.mysqlConn);
 db.connect((err) => {
     if (err) {
         console.log("connection lost: ", err);
         // throw err;
     }
-    console.log("DB '", config.db.database, "' Connected.");
+    console.log("DB '", config.database, "' Connected.");
 });
 
 // server started
